@@ -497,11 +497,12 @@ class ConvertMDApp(ctk.CTk):
 
     def _on_download_clicked(self):
         """Permite guardar / descargar el archivo convertido con el nombre original por defecto."""
-        if not self.converted_markdown or not self.file_info:
+        if self.converted_markdown is None or not self.file_info:
+            messagebox.showwarning("Atención", "No hay ningún archivo procesado para descargar.")
             return
 
-        suggested_name = self.file_info["suggested_output_name"]
-        initial_dir = os.path.dirname(self.selected_file_path)
+        suggested_name = self.file_info.get("suggested_output_name", "documento.md")
+        initial_dir = os.path.dirname(self.selected_file_path) if self.selected_file_path else os.path.expanduser("~")
 
         save_path = filedialog.asksaveasfilename(
             title="Guardar archivo Markdown",
@@ -527,7 +528,7 @@ class ConvertMDApp(ctk.CTk):
 
     def _on_copy_clicked(self):
         """Copia el texto Markdown generado al portapapeles."""
-        if not self.converted_markdown:
+        if self.converted_markdown is None:
             return
 
         self.clipboard_clear()

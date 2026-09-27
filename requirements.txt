@@ -7,4 +7,5 @@ pdfminer.six>=20251230
 pdfplumber>=0.11.0
 pypdfium2>=5.9.0
 pillow>=11.0.0
+winocr>=0.0.15
 pyinstaller>=6.10.0

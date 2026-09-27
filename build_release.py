@@ -59,6 +59,8 @@ def build_portable_executable():
         "--collect-all", "magika",
         "--collect-all", "onnxruntime",
         "--collect-all", "pdfminer",
+        "--collect-all", "winrt",
+        "--collect-all", "winocr",
         "--hidden-import", "docx",
         "--hidden-import", "openpyxl",
         "--hidden-import", "pptx",
