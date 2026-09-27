@@ -35,8 +35,10 @@ def find_inno_compiler() -> str:
 
 
 def clean_previous_builds():
-    """Limpia carpetas temporales anteriores."""
-    print("[INFO] Limpiando carpetas de compilaciones anteriores...")
+    """Limpia carpetas temporales anteriores y cierra procesos en ejecución."""
+    print("[INFO] Cerrando instancias previas de ConvertMD si estan abiertas...")
+    if sys.platform == "win32":
+        subprocess.run(["powershell", "-Command", "Stop-Process -Name 'ConvertMD*' -Force -ErrorAction SilentlyContinue"], capture_output=True)
     for folder in [BUILD_DIR]:
         if os.path.exists(folder):
             shutil.rmtree(folder, ignore_errors=True)
@@ -61,6 +63,8 @@ def build_portable_executable():
         "--collect-all", "pdfminer",
         "--collect-all", "winrt",
         "--collect-all", "winocr",
+        "--collect-all", "tinytag",
+        "--hidden-import", "tinytag",
         "--hidden-import", "docx",
         "--hidden-import", "openpyxl",
         "--hidden-import", "pptx",
