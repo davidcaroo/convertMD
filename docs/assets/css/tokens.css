@@ -1,6 +1,7 @@
-/* ConvertMD Design System Tokens - ui-ux-pro-max compliant */
+/* ConvertMD Design System Tokens - ui-ux-pro-max & impeccable compliant */
+
 :root {
-  /* Surface & Background (OLED Dark Mode) */
+  /* Default: Dark Mode (OLED) */
   --bg-main: #0b0f17;
   --bg-surface: #0f172a;
   --bg-card: #181825;
@@ -64,4 +65,49 @@
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.65);
   --shadow-glow: 0 0 35px rgba(137, 180, 250, 0.2);
   --shadow-success-glow: 0 0 30px rgba(34, 197, 94, 0.25);
+
+  /* Navbar background */
+  --navbar-bg: rgba(11, 15, 23, 0.85);
+  --ambient-glow-1: rgba(137, 180, 250, 0.12);
+  --ambient-glow-2: rgba(34, 197, 94, 0.08);
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] {
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-elevated: #e2e8f0;
+  --bg-terminal: #0f172a; /* Code terminal remains dark for clarity */
+
+  --border-subtle: #e2e8f0;
+  --border-card: #cbd5e1;
+  --border-focus: #2563eb;
+  --border-glow: rgba(37, 99, 235, 0.25);
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-dim: #94a3b8;
+  --text-inverse: #ffffff;
+
+  --accent-primary: #2563eb;       /* Rich Blue */
+  --accent-primary-hover: #1d4ed8;
+  --accent-glow: rgba(37, 99, 235, 0.25);
+  --accent-success: #16a34a;       /* Forest Emerald */
+  --accent-success-hover: #15803d;
+  --accent-warning: #d97706;
+  --accent-purple: #7c3aed;
+  --accent-cyan: #0284c7;
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 48px rgba(15, 23, 42, 0.12);
+  --shadow-glow: 0 0 35px rgba(37, 99, 235, 0.15);
+  --shadow-success-glow: 0 0 30px rgba(22, 163, 74, 0.15);
+
+  --navbar-bg: rgba(255, 255, 255, 0.88);
+  --ambient-glow-1: rgba(37, 99, 235, 0.06);
+  --ambient-glow-2: rgba(22, 163, 74, 0.05);
 }

@@ -1,7 +1,7 @@
 /**
  * ConvertMD 3D Web Experience - Three.js WebGL Interactive Scene
- * Developed following the 3d-web-experience skill principles.
- * Zero-build, high performance (<10k polygons), battery-friendly.
+ * Developed following the 3d-web-experience & impeccable skill principles.
+ * Zero emojis, clean vector texturing, high performance (<10k polygons), battery-friendly.
  */
 
 import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
@@ -33,16 +33,13 @@ class ConvertMD3DScene {
 
   init() {
     try {
-      // 1. Scene setup
       this.scene = new THREE.Scene();
 
-      // 2. Camera setup
       const width = this.container.clientWidth;
       const height = this.container.clientHeight;
       this.camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
       this.camera.position.set(0, 0, 7.5);
 
-      // 3. Renderer setup
       this.renderer = new THREE.WebGLRenderer({
         antialias: true,
         alpha: true,
@@ -53,26 +50,16 @@ class ConvertMD3DScene {
       this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
       this.renderer.toneMappingExposure = 1.1;
 
-      // Ensure canvas takes container space
       const canvas = this.renderer.domElement;
       canvas.id = 'canvas-3d';
       this.container.appendChild(canvas);
 
-      // 4. Lighting
       this.setupLights();
-
-      // 5. 3D Elements: Markdown Central Core & Orbiting Documents
       this.createCentralCore();
       this.createOrbitingDocuments();
       this.createDataParticles();
-
-      // 6. Event listeners
       this.setupEventListeners();
-
-      // 7. Observer to pause when off-screen
       this.setupIntersectionObserver();
-
-      // 8. Start loop
       this.animate();
     } catch (e) {
       console.warn('ConvertMD WebGL initialized with fallback:', e);
@@ -81,7 +68,7 @@ class ConvertMD3DScene {
   }
 
   setupLights() {
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
     this.scene.add(ambientLight);
 
     const blueLight = new THREE.PointLight(0x89b4fa, 3.5, 20);
@@ -98,10 +85,8 @@ class ConvertMD3DScene {
   }
 
   createCentralCore() {
-    // Octahedron core representing Markdown crystallization
     const geometry = new THREE.OctahedronGeometry(1.35, 0);
 
-    // Dark glass physical material
     const material = new THREE.MeshPhysicalMaterial({
       color: 0x181825,
       emissive: 0x1e293b,
@@ -116,7 +101,6 @@ class ConvertMD3DScene {
     this.coreMesh = new THREE.Mesh(geometry, material);
     this.scene.add(this.coreMesh);
 
-    // Glowing wireframe cage
     const wireGeo = new THREE.WireframeGeometry(geometry);
     const wireMat = new THREE.LineBasicMaterial({
       color: 0x89b4fa,
@@ -127,7 +111,6 @@ class ConvertMD3DScene {
     this.coreWireframe = new THREE.LineSegments(wireGeo, wireMat);
     this.coreMesh.add(this.coreWireframe);
 
-    // Outer translucent energy ring
     const ringGeo = new THREE.TorusGeometry(2.1, 0.02, 16, 100);
     const ringMat = new THREE.MeshBasicMaterial({
       color: 0x38bdf8,
@@ -150,7 +133,6 @@ class ConvertMD3DScene {
     ctx.strokeStyle = colorHex;
     ctx.lineWidth = 6;
     
-    // Draw rounded rect
     const r = 16;
     ctx.beginPath();
     ctx.moveTo(r, 0);
@@ -166,24 +148,25 @@ class ConvertMD3DScene {
     ctx.fill();
     ctx.stroke();
 
-    // Badge pill
+    // Clean vector document icon with folded corner (NO EMOJI)
     ctx.fillStyle = colorHex;
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.arc(42, 42, 18, 0, Math.PI * 2);
+    ctx.moveTo(34, 28);
+    ctx.lineTo(46, 28);
+    ctx.lineTo(52, 34);
+    ctx.lineTo(52, 54);
+    ctx.lineTo(34, 54);
+    ctx.closePath();
     ctx.fill();
-
-    // Document icon symbol
-    ctx.fillStyle = '#11111b';
-    ctx.font = 'bold 16px monospace';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText('📄', 42, 42);
+    ctx.stroke();
 
     // Main format extension text
     ctx.fillStyle = '#f8fafc';
     ctx.font = 'bold 26px -apple-system, sans-serif';
     ctx.textAlign = 'left';
-    ctx.fillText(text, 75, 48);
+    ctx.fillText(text, 68, 48);
 
     // Subtitle label
     ctx.fillStyle = '#94a3b8';
@@ -321,32 +304,26 @@ class ConvertMD3DScene {
     const delta = this.clock.getDelta();
     const elapsedTime = this.clock.getElapsedTime();
 
-    // Smooth mouse parallax interpolation
     this.mouse.x += (this.mouse.targetX - this.mouse.x) * 0.05;
     this.mouse.y += (this.mouse.targetY - this.mouse.y) * 0.05;
 
-    // Tilt camera slightly based on mouse
     this.camera.position.x = this.mouse.x * 0.7;
     this.camera.position.y = this.mouse.y * 0.5;
     this.camera.lookAt(0, 0, 0);
 
-    // 1. Central Core Animation
     if (this.coreMesh) {
       const speed = this.reducedMotion ? 0.05 : 0.45;
       this.coreMesh.rotation.y = elapsedTime * speed;
       this.coreMesh.rotation.x = Math.sin(elapsedTime * 0.5) * 0.2;
 
-      // Subtle breathing scale
       const scale = 1.0 + Math.sin(elapsedTime * 1.5) * 0.03;
       this.coreMesh.scale.set(scale, scale, scale);
     }
 
-    // 2. Torus Ring rotation
     if (this.ringMesh) {
       this.ringMesh.rotation.z = elapsedTime * 0.2;
     }
 
-    // 3. Orbiting Document Cards
     this.documentCards.forEach((card) => {
       const u = card.userData;
       const angle = u.baseAngle + (elapsedTime * u.orbitSpeed * (this.reducedMotion ? 0.2 : 0.6));
@@ -355,11 +332,9 @@ class ConvertMD3DScene {
       card.position.z = Math.sin(angle) * u.orbitRadius;
       card.position.y = u.verticalOffset + Math.sin(elapsedTime * u.floatFreq) * 0.15;
 
-      // Keep cards facing user camera with slight inclination
       card.lookAt(this.camera.position);
     });
 
-    // 4. Data Particles swirling
     if (this.particleSystem) {
       this.particleSystem.rotation.y = elapsedTime * 0.15;
       this.particleSystem.rotation.x = elapsedTime * 0.08;
@@ -371,7 +346,11 @@ class ConvertMD3DScene {
   renderFallback() {
     this.container.innerHTML = `
       <div style="text-align: center; padding: 2rem; color: #89b4fa;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">📄 ➔ ⚡ ➔ [ M↓ ]</div>
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+          <polyline points="2 17 12 22 22 17"/>
+          <polyline points="2 12 12 17 22 12"/>
+        </svg>
         <p style="font-weight: 600; color: #f8fafc;">ConvertMD Hub Visualizer</p>
         <p style="font-size: 0.85rem; color: #94a3b8;">Transformación universal de documentos a Markdown optimizado.</p>
       </div>
@@ -379,7 +358,6 @@ class ConvertMD3DScene {
   }
 }
 
-// Auto instantiate when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('scene3d-container');
   if (container) {

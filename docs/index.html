@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ConvertMD ⚡ - Conversor Universal de Documentos a Markdown para IA</title>
+  <title>ConvertMD - Conversor Universal de Documentos a Markdown para IA</title>
   
   <!-- SEO & OpenGraph Meta Tags -->
   <meta name="description" content="Conversor Universal de Documentos a Markdown potenciado por Microsoft MarkItDown. Convierte Word, Excel, PowerPoint, PDF, CSV, JSON, imágenes con OCR y audio de forma 100% offline y privada.">
@@ -14,13 +14,13 @@
   <!-- OpenGraph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://davidcaroo.github.io/convertMD/">
-  <meta property="og:title" content="ConvertMD ⚡ - Conversor Universal a Markdown">
+  <meta property="og:title" content="ConvertMD - Conversor Universal a Markdown">
   <meta property="og:description" content="Transforma documentos a Markdown limpio y jerárquico listo para ingesta en LLMs y agentes de IA. 100% offline y para Windows.">
   <meta property="og:image" content="./assets/images/app-preview-3.svg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ConvertMD ⚡ - Conversor Universal a Markdown">
+  <meta name="twitter:title" content="ConvertMD - Conversor Universal a Markdown">
   <meta name="twitter:description" content="Conversor de documentos Office, PDF, datos y multimedia a Markdown con Microsoft MarkItDown.">
   <meta name="twitter:image" content="./assets/images/app-preview-3.svg">
 
@@ -42,16 +42,15 @@
   <!-- Sticky Glass Navbar -->
   <nav class="navbar" aria-label="Navegación principal">
     <div class="nav-container">
+      <!-- Brand Logo + Name ONLY (v1.0.0 removed as requested) -->
       <a href="#" class="brand" aria-label="ConvertMD Inicio">
         <img src="./assets/images/app_icon.png" alt="ConvertMD Logo" class="brand-icon">
         <span class="brand-name">ConvertMD</span>
-        <span class="brand-badge">v1.0.0</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="#caracteristicas" class="nav-link">Características</a></li>
         <li><a href="#experiencia-3d" class="nav-link">Experiencia 3D</a></li>
-        <li><a href="#demo" class="nav-link">Demo en Vivo</a></li>
+        <li><a href="#demo" class="nav-link">Demo</a></li>
         <li><a href="#capturas" class="nav-link">Capturas</a></li>
         <li><a href="#formatos" class="nav-link">Formatos</a></li>
         <li><a href="#releases" class="nav-link">Releases</a></li>
@@ -59,6 +58,40 @@
       </ul>
 
       <div class="nav-actions">
+        <!-- 3-State Theme Selector: Sol / Luna / Desktop -->
+        <div class="theme-switch-group" role="group" aria-label="Selección de tema">
+          <!-- Light Mode (Sol) -->
+          <button class="theme-toggle-btn" data-theme-set="light" title="Modo Claro" aria-label="Cambiar a Modo Claro">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+
+          <!-- Dark Mode (Luna) -->
+          <button class="theme-toggle-btn active" data-theme-set="dark" title="Modo Oscuro" aria-label="Cambiar a Modo Oscuro">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+
+          <!-- System Mode (Desktop/Monitor) -->
+          <button class="theme-toggle-btn" data-theme-set="system" title="Tema del Sistema" aria-label="Usar Tema del Sistema">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </button>
+        </div>
+
         <a href="https://github.com/davidcaroo/convertMD" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" aria-label="Ver repositorio en GitHub">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
@@ -77,9 +110,18 @@
         <div class="hero-grid">
           <div class="hero-content">
             <div class="hero-badge-group">
-              <span class="hero-badge highlight">⚡ Motor Microsoft MarkItDown</span>
-              <span class="hero-badge">100% Offline &amp; Privado</span>
-              <span class="hero-badge">Open Source MIT</span>
+              <span class="hero-badge highlight">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>Microsoft MarkItDown Core</span>
+              </span>
+              <span class="hero-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>100% Offline &amp; Privado</span>
+              </span>
+              <span class="hero-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <span>Open Source MIT</span>
+              </span>
             </div>
 
             <h1 class="hero-title">
@@ -104,25 +146,25 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <polygon points="5 3 19 12 5 21 5 3"/>
                 </svg>
-                <span>Probar Demo en Vivo</span>
+                <span>Probar Demo</span>
               </a>
             </div>
 
             <div class="hero-meta">
               <div class="hero-meta-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
                 <span>Portable (.exe) sin instalación</span>
               </div>
               <div class="hero-meta-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
                 <span>Instalador oficial disponible</span>
               </div>
               <div class="hero-meta-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
                 <span>Sin límites de archivos</span>
@@ -138,39 +180,46 @@
       </div>
     </section>
 
-    <!-- Metrics & Trust Strip -->
+    <!-- Metrics & Trust Strip (SVG icons only, no emojis) -->
     <section class="section" style="padding-top: 0; padding-bottom: var(--space-2xl);">
       <div class="container">
         <div class="metrics-strip">
           <div class="metric-card">
-            <span class="metric-icon">🔒</span>
+            <div class="metric-icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
             <span class="metric-value">100% Local</span>
-            <span class="metric-label">Tus archivos nunca salen de tu PC ni van a la nube</span>
+            <span class="metric-label">Tus archivos nunca salen de tu equipo ni se envían a la nube</span>
           </div>
           <div class="metric-card">
-            <span class="metric-icon">⚡</span>
+            <div class="metric-icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
             <span class="metric-value">Microsoft Core</span>
             <span class="metric-label">Potenciado por el motor oficial Microsoft MarkItDown</span>
           </div>
           <div class="metric-card">
-            <span class="metric-icon">📑</span>
+            <div class="metric-icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
             <span class="metric-value">15+ Formatos</span>
             <span class="metric-label">Office, PDF, CSV, JSON, OCR en imágenes y audio</span>
           </div>
           <div class="metric-card">
-            <span class="metric-icon">💻</span>
+            <div class="metric-icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
             <span class="metric-value">Nativo Windows</span>
-            <span class="metric-label">Interfaz moderna con hilos en segundo plano</span>
+            <span class="metric-label">Interfaz moderna con procesamiento asíncrono en segundo plano</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Live Demo Playground -->
+    <!-- Interactive Live Demo Playground (Eyebrow removed as requested) -->
     <section class="section" id="demo">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Demo en Vivo</span>
           <h2 class="section-title">Experimenta la Conversión en Tiempo Real</h2>
           <p class="section-subtitle">
             Observa cómo ConvertMD transforma datos tabulares, documentos enriquecidos y código en Markdown listo para tus agentes de Inteligencia Artificial.
@@ -182,13 +231,16 @@
           <div class="demo-toolbar">
             <div class="sample-tabs">
               <button class="sample-tab-btn active" data-sample="excel">
-                <span>📊 Excel / Ventas</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+                <span>Excel / Ventas</span>
               </button>
               <button class="sample-tab-btn" data-sample="word">
-                <span>📄 Word / Especificación</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span>Word / Especificación</span>
               </button>
               <button class="sample-tab-btn" data-sample="json">
-                <span>⚙️ JSON / Configuración</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <span>JSON / Configuración</span>
               </button>
             </div>
 
@@ -238,11 +290,10 @@
       </div>
     </section>
 
-    <!-- Real UI Screenshots Showcase -->
+    <!-- Real UI Screenshots Showcase (Eyebrow removed as requested) -->
     <section class="section" id="capturas">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Interfaz Gráfica</span>
           <h2 class="section-title">Capturas Reales de la Aplicación</h2>
           <p class="section-subtitle">
             Diseñada en CustomTkinter con estética moderna, tema oscuro refinado y procesamiento asíncrono para que la interfaz nunca se bloquee.
@@ -250,15 +301,18 @@
         </div>
 
         <div class="showcase-wrapper">
-          <!-- State Switcher Tabs -->
+          <!-- State Switcher Tabs with SVG icons -->
           <div class="showcase-tabs">
             <button class="showcase-tab-btn active" data-preview="1">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               <span>1. Selección y Arrastre</span>
             </button>
             <button class="showcase-tab-btn" data-preview="2">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
               <span>2. Procesamiento y Barra de Carga</span>
             </button>
             <button class="showcase-tab-btn" data-preview="3">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
               <span>3. Previsualizador y Exportación</span>
             </button>
           </div>
@@ -271,11 +325,10 @@
       </div>
     </section>
 
-    <!-- Supported Formats Matrix -->
+    <!-- Supported Formats Matrix (SVGs only, no emojis) -->
     <section class="section" id="formatos">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Compatibilidad Universal</span>
           <h2 class="section-title">Matriz de Formatos Soportados</h2>
           <p class="section-subtitle">
             Cualquier documento de oficina, base de datos o archivo multimedia se unifica bajo el estándar Markdown.
@@ -285,7 +338,9 @@
         <div class="formats-grid">
           <div class="format-category-card">
             <div class="format-card-header">
-              <span class="format-card-icon">💼</span>
+              <div class="format-card-icon-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
               <h3 class="format-card-title">Documentos Office</h3>
             </div>
             <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-md);">
@@ -303,7 +358,9 @@
 
           <div class="format-category-card">
             <div class="format-card-header">
-              <span class="format-card-icon">📖</span>
+              <div class="format-card-icon-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </div>
               <h3 class="format-card-title">Lectura y Textos</h3>
             </div>
             <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-md);">
@@ -319,7 +376,9 @@
 
           <div class="format-category-card">
             <div class="format-card-header">
-              <span class="format-card-icon">🗄️</span>
+              <div class="format-card-icon-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
               <h3 class="format-card-title">Datos Estructurados</h3>
             </div>
             <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-md);">
@@ -336,11 +395,13 @@
 
           <div class="format-category-card">
             <div class="format-card-header">
-              <span class="format-card-icon">📓</span>
+              <div class="format-card-icon-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
               <h3 class="format-card-title">Cuadernos y Archivos</h3>
             </div>
             <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-md);">
-              Extracción de celdas de Jupyter Notebooks y descomprobación de archivos comprimidos.
+              Extracción de celdas de Jupyter Notebooks y descompresión de archivos zip.
             </p>
             <div class="format-tags">
               <span class="format-tag">.ipynb</span>
@@ -350,7 +411,9 @@
 
           <div class="format-category-card">
             <div class="format-card-header">
-              <span class="format-card-icon">👁️</span>
+              <div class="format-card-icon-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
               <h3 class="format-card-title">Multimedia y OCR</h3>
             </div>
             <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-md);">
@@ -371,7 +434,6 @@
     <section class="section" id="releases">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Descargas y Releases</span>
           <h2 class="section-title">Elige tu Formato de Entrega</h2>
           <p class="section-subtitle">
             Binarios compilados y optimizados para Windows x64. Elige entre la versión portable sin instalación o el instalador tradicional.
@@ -463,17 +525,16 @@
 
         <div style="text-align: center; margin-top: var(--space-xl);">
           <a href="https://github.com/davidcaroo/convertMD/releases" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); font-size: 0.95rem; text-decoration: none; font-weight: 600;">
-            Ver historial de versiones y notas de la versión en GitHub ➔
+            Ver historial de versiones y notas de la versión en GitHub →
           </a>
         </div>
       </div>
     </section>
 
     <!-- Developer & Open Source Section -->
-    <section class="section" id="desarrollo" style="background: rgba(15, 23, 42, 0.4);">
+    <section class="section" id="desarrollo">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Para Desarrolladores</span>
           <h2 class="section-title">Código Abierto y Ejecución Local</h2>
           <p class="section-subtitle">
             ConvertMD es 100% Open Source. Puedes auditar el código, clonarlo, personalizarlo o compilar tus propios ejecutables.

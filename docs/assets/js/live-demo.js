@@ -1,6 +1,7 @@
 /**
  * ConvertMD Interactive Live Demo Playground
  * Powers the in-browser real-time document-to-markdown preview.
+ * Fully compliant with no-emojis rule and crisp SVG icons.
  */
 
 const SAMPLE_DATASETS = {
@@ -133,10 +134,8 @@ class LiveDemoPlayground {
   init() {
     if (!this.rawInputElem || !this.mdOutputElem) return;
 
-    // Load initial sample
     this.loadSample('excel');
 
-    // Attach tab listeners
     this.tabButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
         const dataset = e.currentTarget.getAttribute('data-sample');
@@ -146,12 +145,10 @@ class LiveDemoPlayground {
       });
     });
 
-    // Handle user manual editing
     this.rawInputElem.addEventListener('input', () => {
       this.handleUserEdit();
     });
 
-    // Copy to clipboard
     if (this.copyBtn) {
       this.copyBtn.addEventListener('click', () => this.copyToClipboard());
     }
@@ -173,7 +170,6 @@ class LiveDemoPlayground {
     const customText = this.rawInputElem.innerText;
     this.currentFileNameElem.textContent = 'documento_personalizado.txt';
 
-    // Simple reactive markdown converter for live typing
     let generatedMd = customText;
     if (!generatedMd.startsWith('#')) {
       generatedMd = `# Documento Convertido\n> Procesado en vivo por ConvertMD\n\n` + generatedMd;
@@ -198,7 +194,12 @@ class LiveDemoPlayground {
     try {
       await navigator.clipboard.writeText(textToCopy);
       const originalText = this.copyBtn.innerHTML;
-      this.copyBtn.innerHTML = `<span>✓ ¡Copiado al Portapapeles!</span>`;
+      this.copyBtn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        <span>¡Copiado con Éxito!</span>
+      `;
       this.copyBtn.classList.remove('btn-primary');
       this.copyBtn.classList.add('btn-emerald');
 
