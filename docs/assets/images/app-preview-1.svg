@@ -42,10 +42,15 @@
     <g transform="translate(64, 192)">
       <rect x="0" y="0" width="772" height="220" rx="14" fill="url(#cardBg)" stroke="#45475a" stroke-width="2" stroke-dasharray="8 6"/>
       
-      <!-- Upload Icon Graphic -->
-      <circle cx="386" cy="72" r="32" fill="#313244"/>
-      <path d="M 386 54 L 386 86 M 386 54 L 374 66 M 386 54 L 398 66" stroke="#89b4fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 366 84 L 366 94 A 4 4 0 0 0 370 98 L 402 98 A 4 4 0 0 0 406 94 L 406 84" stroke="#89b4fa" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Upload Icon Graphic (Clean vector, perfectly centered, no black fills) -->
+      <g transform="translate(386, 68)">
+        <circle cx="0" cy="0" r="32" fill="#24273a" stroke="#38435d" stroke-width="1.5"/>
+        <g stroke="#89b4fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path d="M -15 8 L -15 13 A 3 3 0 0 0 -12 16 L 12 16 A 3 3 0 0 0 15 13 L 15 8"/>
+          <line x1="0" y1="7" x2="0" y2="-13"/>
+          <polyline points="-8,-5 0,-13 8,-5"/>
+        </g>
+      </g>
 
       <text x="386" y="128" fill="#cdd6f4" font-family="'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="600" text-anchor="middle">Selecciona o arrastra cualquier archivo de oficina o datos</text>
       <text x="386" y="150" fill="#9399b2" font-family="'Segoe UI', Roboto, sans-serif" font-size="12.5" text-anchor="middle">Soporta DOCX, XLSX, PPTX, PDF, CSV, JSON, XML, HTML, EPUB, PNG, JPG y Audio</text>

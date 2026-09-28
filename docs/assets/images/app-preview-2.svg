@@ -31,8 +31,10 @@
     <!-- Header Section -->
     <g transform="translate(64, 102)">
       <text x="0" y="32" fill="#cdd6f4" font-family="'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" letter-spacing="-0.5">ConvertMD</text>
-      <rect x="175" y="10" width="220" height="26" rx="6" fill="#313244"/>
-      <text x="187" y="27" fill="#89b4fa" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600">⚡ Powered by Microsoft MarkItDown</text>
+      <rect x="175" y="10" width="225" height="26" rx="6" fill="#313244"/>
+      <!-- Lightning SVG -->
+      <path d="M 188 23 L 194 15 L 198 15 L 195 21 L 201 21 L 192 31 L 194 25 Z" fill="#89b4fa"/>
+      <text x="206" y="27" fill="#89b4fa" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600">Powered by Microsoft MarkItDown</text>
       <text x="0" y="58" fill="#a6adc8" font-family="'Segoe UI', Roboto, sans-serif" font-size="13">Convirtiendo con procesamiento en segundo plano asíncrono para máxima fluidez.</text>
     </g>
 
