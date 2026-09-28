@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <linearGradient id="greenBtn" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a6e3a1"/>
+      <stop offset="100%" stop-color="#94e2d5"/>
+    </linearGradient>
+    <linearGradient id="blueBtn" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#89b4fa"/>
+      <stop offset="100%" stop-color="#b4befe"/>
+    </linearGradient>
+  </defs>
+
+  <!-- App Window Shadow & Frame -->
+  <g filter="url(#shadow)">
+    <rect x="20" y="20" width="860" height="640" rx="16" fill="#11111b" stroke="#313244" stroke-width="1.5"/>
+    
+    <!-- Titlebar -->
+    <path d="M 20 36 A 16 16 0 0 1 36 20 L 864 20 A 16 16 0 0 1 880 36 L 880 58 L 20 58 Z" fill="#181825"/>
+    <circle cx="44" cy="39" r="6" fill="#f38ba8"/>
+    <circle cx="64" cy="39" r="6" fill="#f9e2af"/>
+    <circle cx="84" cy="39" r="6" fill="#a6e3a1"/>
+    <text x="450" y="44" fill="#a6adc8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">ConvertMD - ¡Conversión Exitosa!</text>
+    
+    <!-- Window Inner Container -->
+    <rect x="40" y="78" width="820" height="562" rx="14" fill="#181825" stroke="#252538" stroke-width="1"/>
+
+    <!-- Header Section with Success Badge -->
+    <g transform="translate(64, 98)">
+      <text x="0" y="26" fill="#cdd6f4" font-family="'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="700">ConvertMD</text>
+      <!-- Success Badge -->
+      <rect x="140" y="6" width="160" height="26" rx="6" fill="#1e3a29" stroke="#a6e3a1" stroke-width="1"/>
+      <text x="152" y="23" fill="#a6e3a1" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700">✓ Conversión Completa</text>
+      
+      <!-- Stats Pills Bar -->
+      <g transform="translate(320, 4)">
+        <rect x="0" y="0" width="105" height="30" rx="6" fill="#1e1e2e" stroke="#313244"/>
+        <text x="52" y="20" fill="#cdd6f4" font-family="'JetBrains Mono', monospace" font-size="11.5" text-anchor="middle">📊 184 líneas</text>
+
+        <rect x="115" y="0" width="115" height="30" rx="6" fill="#1e1e2e" stroke="#313244"/>
+        <text x="172" y="20" fill="#cdd6f4" font-family="'JetBrains Mono', monospace" font-size="11.5" text-anchor="middle">📝 2,420 palabras</text>
+
+        <rect x="240" y="0" width="105" height="30" rx="6" fill="#1e1e2e" stroke="#313244"/>
+        <text x="292" y="20" fill="#89b4fa" font-family="'JetBrains Mono', monospace" font-size="11.5" text-anchor="middle">⚡ 0.38 seg</text>
+
+        <rect x="355" y="0" width="95" height="30" rx="6" fill="#1e1e2e" stroke="#313244"/>
+        <text x="402" y="20" fill="#a6e3a1" font-family="'JetBrains Mono', monospace" font-size="11.5" text-anchor="middle">18.4 KB .md</text>
+      </g>
+    </g>
+
+    <!-- Source & Target Header -->
+    <g transform="translate(64, 150)">
+      <rect x="0" y="0" width="772" height="42" rx="8" fill="#1e1e2e" stroke="#313244"/>
+      <text x="16" y="26" fill="#a6adc8" font-family="'JetBrains Mono', monospace" font-size="12">Origen: <tspan fill="#fab387">reporte_anual_ia.docx</tspan> ➔ Destino: <tspan fill="#a6e3a1">reporte_anual_ia.md</tspan></text>
+      <text x="756" y="26" fill="#89b4fa" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="end">Codificación: UTF-8</text>
+    </g>
+
+    <!-- Live Markdown Preview Box -->
+    <g transform="translate(64, 204)">
+      <rect x="0" y="0" width="772" height="340" rx="10" fill="#11111b" stroke="#313244"/>
+      <!-- Top mini bar of preview -->
+      <path d="M 0 10 A 10 10 0 0 1 10 0 L 762 0 A 10 10 0 0 1 772 10 L 772 32 L 0 32 Z" fill="#181825"/>
+      <text x="16" y="21" fill="#6c7086" font-family="'JetBrains Mono', monospace" font-size="11">PREVISUALIZACIÓN EN VIVO (MARKDOWN GFM)</text>
+      
+      <!-- Markdown Content rendered with syntax colors -->
+      <g transform="translate(20, 56)" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" line-height="20">
+        <text x="0" y="0" fill="#89b4fa" font-weight="700"># Informe Ejecutivo: Implementación de Modelos RAG y LLMs</text>
+        <text x="0" y="26" fill="#6c7086">&gt; Documento extraído automáticamente con ConvertMD potenciado por Microsoft MarkItDown</text>
+        
+        <text x="0" y="58" fill="#cdd6f4">El presente reporte resume los resultados de las conversiones de documentos empresariales</text>
+        <text x="0" y="78" fill="#cdd6f4">hacia formatos listos para ingesta vectorial en bases de datos como Pinecone o ChromaDB.</text>
+
+        <text x="0" y="112" fill="#89b4fa" font-weight="700">## Tabla Comparativa de Eficiencia y Rendimiento</text>
+
+        <!-- Markdown Table rendering -->
+        <text x="0" y="140" fill="#a6e3a1">| Formato Entrada | Motor de Extracción | Tiempo (s) | Calidad de Tablas | Tokens Ahorrados |</text>
+        <text x="0" y="160" fill="#6c7086">|-----------------|---------------------|------------|-------------------|------------------|</text>
+        <text x="0" y="180" fill="#cdd6f4">| <tspan fill="#f9e2af">.docx</tspan>           | Microsoft MarkItDown| <tspan fill="#89b4fa">0.38s</tspan>      | 100% Jerárquico   | +42% optimizado  |</text>
+        <text x="0" y="200" fill="#cdd6f4">| <tspan fill="#f9e2af">.xlsx</tspan>           | MarkItDown + OpenPy | <tspan fill="#89b4fa">0.45s</tspan>      | Grid Markdown     | +65% claridad    |</text>
+        <text x="0" y="220" fill="#cdd6f4">| <tspan fill="#f9e2af">.pdf</tspan>            | PDFMiner + WinOCR   | <tspan fill="#89b4fa">0.82s</tspan>      | Preservado        | +38% precisión   |</text>
+        <text x="0" y="240" fill="#cdd6f4">| <tspan fill="#f9e2af">.png (OCR)</tspan>      | Windows Native OCR  | <tspan fill="#89b4fa">0.29s</tspan>      | Texto extraído    | N/A              |</text>
+
+        <text x="0" y="272" fill="#89b4fa" font-weight="700">## Conclusiones Técnicas</text>
+        <text x="0" y="294" fill="#cdd6f4">- Documento listo para inyección de contexto en agentes autónomos sin preprocesamiento extra.</text>
+      </g>
+    </g>
+
+    <!-- Bottom Action Buttons Toolbar -->
+    <g transform="translate(64, 560)">
+      <!-- Download Button -->
+      <rect x="0" y="0" width="220" height="46" rx="10" fill="url(#greenBtn)"/>
+      <text x="110" y="28" fill="#11111b" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">💾 Guardar Archivo .md</text>
+
+      <!-- Copy to Clipboard Button -->
+      <rect x="235" y="0" width="190" height="46" rx="10" fill="url(#blueBtn)"/>
+      <text x="330" y="28" fill="#11111b" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">📋 Copiar Markdown</text>
+
+      <!-- Open Folder Button -->
+      <rect x="440" y="0" width="180" height="46" rx="10" fill="#313244"/>
+      <text x="530" y="28" fill="#cdd6f4" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" text-anchor="middle">📂 Abrir Carpeta</text>
+
+      <!-- Convert Another Button -->
+      <rect x="635" y="0" width="137" height="46" rx="10" fill="#1e1e2e" stroke="#45475a"/>
+      <text x="703" y="28" fill="#a6adc8" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" text-anchor="middle">↻ Convertir Otro</text>
+    </g>
+  </g>
+</svg>

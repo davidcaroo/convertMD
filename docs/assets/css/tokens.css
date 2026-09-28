@@ -1,0 +1,67 @@
+/* ConvertMD Design System Tokens - ui-ux-pro-max compliant */
+:root {
+  /* Surface & Background (OLED Dark Mode) */
+  --bg-main: #0b0f17;
+  --bg-surface: #0f172a;
+  --bg-card: #181825;
+  --bg-card-hover: #1e1e2e;
+  --bg-elevated: #24273a;
+  --bg-terminal: #090d16;
+
+  /* Borders & Dividers */
+  --border-subtle: #242938;
+  --border-card: #313244;
+  --border-focus: #89b4fa;
+  --border-glow: rgba(137, 180, 250, 0.35);
+
+  /* Typography Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cdd6f4;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --text-inverse: #0b0f17;
+
+  /* Brand Accents */
+  --accent-primary: #89b4fa;       /* Electric Tech Blue */
+  --accent-primary-hover: #b4befe;
+  --accent-glow: rgba(137, 180, 250, 0.4);
+  --accent-success: #22c55e;       /* Terminal Emerald */
+  --accent-success-hover: #4ade80;
+  --accent-warning: #f59e0b;       /* Amber */
+  --accent-purple: #cba6f7;        /* Mauve / LLM Intelligence */
+  --accent-cyan: #38bdf8;
+
+  /* Fonts */
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+  /* Spacing Scale */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 35px rgba(137, 180, 250, 0.2);
+  --shadow-success-glow: 0 0 30px rgba(34, 197, 94, 0.25);
+}

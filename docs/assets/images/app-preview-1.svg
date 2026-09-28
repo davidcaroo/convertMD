@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#89b4fa"/>
+      <stop offset="100%" stop-color="#74c7ec"/>
+    </linearGradient>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#181825"/>
+    </linearGradient>
+  </defs>
+
+  <!-- App Window Shadow & Frame -->
+  <g filter="url(#shadow)">
+    <rect x="20" y="20" width="860" height="640" rx="16" fill="#11111b" stroke="#313244" stroke-width="1.5"/>
+    
+    <!-- Titlebar -->
+    <path d="M 20 36 A 16 16 0 0 1 36 20 L 864 20 A 16 16 0 0 1 880 36 L 880 58 L 20 58 Z" fill="#181825"/>
+    <circle cx="44" cy="39" r="6" fill="#f38ba8"/>
+    <circle cx="64" cy="39" r="6" fill="#f9e2af"/>
+    <circle cx="84" cy="39" r="6" fill="#a6e3a1"/>
+    <text x="450" y="44" fill="#a6adc8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">ConvertMD - Conversor Universal a Markdown</text>
+    
+    <!-- Window Inner Container -->
+    <rect x="40" y="78" width="820" height="562" rx="14" fill="#181825" stroke="#252538" stroke-width="1"/>
+
+    <!-- Header Section -->
+    <g transform="translate(64, 102)">
+      <text x="0" y="32" fill="#cdd6f4" font-family="'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" letter-spacing="-0.5">ConvertMD</text>
+      <!-- Powered by Microsoft MarkItDown Badge -->
+      <rect x="175" y="10" width="220" height="26" rx="6" fill="#313244"/>
+      <text x="187" y="27" fill="#89b4fa" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600">⚡ Powered by Microsoft MarkItDown</text>
+      <text x="0" y="58" fill="#a6adc8" font-family="'Segoe UI', Roboto, sans-serif" font-size="13">Convierte Word (DOCX), Excel (XLSX), PowerPoint (PPTX), PDF, CSV, JSON e imágenes a Markdown limpio.</text>
+    </g>
+
+    <!-- State 1: File Selection Area (Drop Zone) -->
+    <g transform="translate(64, 192)">
+      <rect x="0" y="0" width="772" height="220" rx="14" fill="url(#cardBg)" stroke="#45475a" stroke-width="2" stroke-dasharray="8 6"/>
+      
+      <!-- Upload Icon Graphic -->
+      <circle cx="386" cy="72" r="32" fill="#313244"/>
+      <path d="M 386 54 L 386 86 M 386 54 L 374 66 M 386 54 L 398 66" stroke="#89b4fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 366 84 L 366 94 A 4 4 0 0 0 370 98 L 402 98 A 4 4 0 0 0 406 94 L 406 84" stroke="#89b4fa" stroke-width="2.5" stroke-linecap="round"/>
+
+      <text x="386" y="128" fill="#cdd6f4" font-family="'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="600" text-anchor="middle">Selecciona o arrastra cualquier archivo de oficina o datos</text>
+      <text x="386" y="150" fill="#9399b2" font-family="'Segoe UI', Roboto, sans-serif" font-size="12.5" text-anchor="middle">Soporta DOCX, XLSX, PPTX, PDF, CSV, JSON, XML, HTML, EPUB, PNG, JPG y Audio</text>
+
+      <!-- Button -->
+      <rect x="316" y="166" width="140" height="36" rx="8" fill="url(#blueGlow)"/>
+      <text x="386" y="189" fill="#11111b" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Examinar Archivo...</text>
+    </g>
+
+    <!-- Feature Quick Pills -->
+    <g transform="translate(64, 442)">
+      <rect x="0" y="0" width="244" height="74" rx="10" fill="#1e1e2e" stroke="#313244"/>
+      <circle cx="34" cy="37" r="16" fill="#313244"/>
+      <text x="34" y="42" fill="#a6e3a1" font-size="16" text-anchor="middle">⚡</text>
+      <text x="60" y="32" fill="#cdd6f4" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">Extracción Jerárquica</text>
+      <text x="60" y="49" fill="#a6adc8" font-family="'Segoe UI', Roboto, sans-serif" font-size="11">Tablas, listas y encabezados</text>
+
+      <rect x="264" y="0" width="244" height="74" rx="10" fill="#1e1e2e" stroke="#313244"/>
+      <circle cx="298" cy="37" r="16" fill="#313244"/>
+      <text x="298" y="42" fill="#89b4fa" font-size="16" text-anchor="middle">🔒</text>
+      <text x="324" y="32" fill="#cdd6f4" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">100% Local &amp; Privado</text>
+      <text x="324" y="49" fill="#a6adc8" font-family="'Segoe UI', Roboto, sans-serif" font-size="11">Sin nube, sin fugas de datos</text>
+
+      <rect x="528" y="0" width="244" height="74" rx="10" fill="#1e1e2e" stroke="#313244"/>
+      <circle cx="562" cy="37" r="16" fill="#313244"/>
+      <text x="562" y="42" fill="#f9e2af" font-size="16" text-anchor="middle">👁️</text>
+      <text x="588" y="32" fill="#cdd6f4" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">OCR Windows Nativo</text>
+      <text x="588" y="49" fill="#a6adc8" font-family="'Segoe UI', Roboto, sans-serif" font-size="11">Lee texto incrustado en fotos</text>
+    </g>
+
+    <!-- Bottom Status Bar -->
+    <g transform="translate(64, 542)">
+      <rect x="0" y="0" width="772" height="60" rx="10" fill="#1e1e2e" stroke="#313244"/>
+      <circle cx="28" cy="30" r="5" fill="#a6e3a1"/>
+      <text x="42" y="34" fill="#a6adc8" font-family="'Segoe UI', Roboto, sans-serif" font-size="12.5">Listo para convertir. Esperando archivo...</text>
+      <rect x="630" y="15" width="128" height="30" rx="6" fill="#313244"/>
+      <text x="694" y="34" fill="#89b4fa" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">Motor: v0.0.1a4</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConvertMD ⚡ - Conversor Universal de Documentos a Markdown para IA</title>
+  
+  <!-- SEO & OpenGraph Meta Tags -->
+  <meta name="description" content="Conversor Universal de Documentos a Markdown potenciado por Microsoft MarkItDown. Convierte Word, Excel, PowerPoint, PDF, CSV, JSON, imágenes con OCR y audio de forma 100% offline y privada.">
+  <meta name="keywords" content="ConvertMD, Markdown, Microsoft MarkItDown, PDF to Markdown, Excel to Markdown, Word to Markdown, RAG, LLM, OCR, Windows, Open Source">
+  <meta name="author" content="David Caro (@davidcaroo)">
+  <link rel="canonical" href="https://davidcaroo.github.io/convertMD/">
+
+  <!-- OpenGraph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://davidcaroo.github.io/convertMD/">
+  <meta property="og:title" content="ConvertMD ⚡ - Conversor Universal a Markdown">
+  <meta property="og:description" content="Transforma documentos a Markdown limpio y jerárquico listo para ingesta en LLMs y agentes de IA. 100% offline y para Windows.">
+  <meta property="og:image" content="./assets/images/app-preview-3.svg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ConvertMD ⚡ - Conversor Universal a Markdown">
+  <meta name="twitter:description" content="Conversor de documentos Office, PDF, datos y multimedia a Markdown con Microsoft MarkItDown.">
+  <meta name="twitter:image" content="./assets/images/app-preview-3.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/images/app_icon.png">
+
+  <!-- Google Fonts: IBM Plex Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/tokens.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+</head>
+<body>
+
+  <!-- Sticky Glass Navbar -->
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="nav-container">
+      <a href="#" class="brand" aria-label="ConvertMD Inicio">
+        <img src="./assets/images/app_icon.png" alt="ConvertMD Logo" class="brand-icon">
+        <span class="brand-name">ConvertMD</span>
+        <span class="brand-badge">v1.0.0</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#caracteristicas" class="nav-link">Características</a></li>
+        <li><a href="#experiencia-3d" class="nav-link">Experiencia 3D</a></li>
+        <li><a href="#demo" class="nav-link">Demo en Vivo</a></li>
+        <li><a href="#capturas" class="nav-link">Capturas</a></li>
+        <li><a href="#formatos" class="nav-link">Formatos</a></li>
+        <li><a href="#releases" class="nav-link">Releases</a></li>
+        <li><a href="#desarrollo" class="nav-link">Código</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://github.com/davidcaroo/convertMD" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" aria-label="Ver repositorio en GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a href="#releases" class="btn btn-primary btn-sm">Descargar</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section with 3D Experience -->
+    <section class="hero" id="experiencia-3d">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge-group">
+              <span class="hero-badge highlight">⚡ Motor Microsoft MarkItDown</span>
+              <span class="hero-badge">100% Offline &amp; Privado</span>
+              <span class="hero-badge">Open Source MIT</span>
+            </div>
+
+            <h1 class="hero-title">
+              El Conversor Universal de Documentos a <span class="gradient-text">Markdown para IA</span>
+            </h1>
+
+            <p class="hero-desc">
+              Transforma Word, Excel, PowerPoint, PDF, CSV, JSON e imágenes con OCR en formato Markdown limpio, estructurado y optimizado para LLMs y sistemas RAG. Aplicación nativa y portable para Windows.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#releases" class="btn btn-primary btn-lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                <span>Descargar para Windows</span>
+              </a>
+
+              <a href="#demo" class="btn btn-secondary btn-lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+                <span>Probar Demo en Vivo</span>
+              </a>
+            </div>
+
+            <div class="hero-meta">
+              <div class="hero-meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Portable (.exe) sin instalación</span>
+              </div>
+              <div class="hero-meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Instalador oficial disponible</span>
+              </div>
+              <div class="hero-meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Sin límites de archivos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3D WebGL Canvas Interactive Experience -->
+          <div class="hero-3d-wrapper" id="scene3d-container" aria-label="Visualizador 3D interactivo de documentos convirtiéndose a Markdown">
+            <span class="canvas-hint">Arrastra para explorar en 3D</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics & Trust Strip -->
+    <section class="section" style="padding-top: 0; padding-bottom: var(--space-2xl);">
+      <div class="container">
+        <div class="metrics-strip">
+          <div class="metric-card">
+            <span class="metric-icon">🔒</span>
+            <span class="metric-value">100% Local</span>
+            <span class="metric-label">Tus archivos nunca salen de tu PC ni van a la nube</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-icon">⚡</span>
+            <span class="metric-value">Microsoft Core</span>
+            <span class="metric-label">Potenciado por el motor oficial Microsoft MarkItDown</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-icon">📑</span>
+            <span class="metric-value">15+ Formatos</span>
+            <span class="metric-label">Office, PDF, CSV, JSON, OCR en imágenes y audio</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-icon">💻</span>
+            <span class="metric-value">Nativo Windows</span>
+            <span class="metric-label">Interfaz moderna con hilos en segundo plano</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Live Demo Playground -->
+    <section class="section" id="demo">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Demo en Vivo</span>
+          <h2 class="section-title">Experimenta la Conversión en Tiempo Real</h2>
+          <p class="section-subtitle">
+            Observa cómo ConvertMD transforma datos tabulares, documentos enriquecidos y código en Markdown listo para tus agentes de Inteligencia Artificial.
+          </p>
+        </div>
+
+        <div class="live-demo-card">
+          <!-- Toolbar with tabs and metrics -->
+          <div class="demo-toolbar">
+            <div class="sample-tabs">
+              <button class="sample-tab-btn active" data-sample="excel">
+                <span>📊 Excel / Ventas</span>
+              </button>
+              <button class="sample-tab-btn" data-sample="word">
+                <span>📄 Word / Especificación</span>
+              </button>
+              <button class="sample-tab-btn" data-sample="json">
+                <span>⚙️ JSON / Configuración</span>
+              </button>
+            </div>
+
+            <div class="demo-metrics-bar">
+              <div>Líneas: <span id="stat-lines">0</span></div>
+              <div>Palabras: <span id="stat-words">0</span></div>
+              <div>Caracteres: <span id="stat-chars">0</span></div>
+              <div>Motor: <span>MarkItDown JS</span></div>
+            </div>
+          </div>
+
+          <!-- Split Screen: Raw Input vs Markdown Output -->
+          <div class="demo-split-view">
+            <!-- Left Pane: Input -->
+            <div class="demo-pane">
+              <div class="pane-header">
+                <span>Documento de Entrada: <strong id="demo-file-name" style="color: var(--text-primary);">Reporte_Ventas_Q3.xlsx</strong></span>
+                <span style="color: var(--accent-primary);">(Editable)</span>
+              </div>
+              <div class="pane-content" id="demo-raw-input" contenteditable="true" spellcheck="false"></div>
+            </div>
+
+            <!-- Right Pane: Markdown Output -->
+            <div class="demo-pane">
+              <div class="pane-header">
+                <span>Resultado Markdown Limpio (.md)</span>
+                <span style="color: var(--accent-success);">Listo para RAG / LLM</span>
+              </div>
+              <div class="pane-content markdown-rendered" id="demo-md-output"></div>
+            </div>
+          </div>
+
+          <!-- Demo Footer with 1-click Copy -->
+          <div class="demo-footer-action">
+            <span style="font-size: 0.85rem; color: var(--text-dim); font-family: var(--font-mono);">
+              * Puedes editar el texto del panel izquierdo en vivo para probar el conversor.
+            </span>
+            <button class="btn btn-primary btn-sm" id="demo-copy-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              <span>Copiar Markdown</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real UI Screenshots Showcase -->
+    <section class="section" id="capturas">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Interfaz Gráfica</span>
+          <h2 class="section-title">Capturas Reales de la Aplicación</h2>
+          <p class="section-subtitle">
+            Diseñada en CustomTkinter con estética moderna, tema oscuro refinado y procesamiento asíncrono para que la interfaz nunca se bloquee.
+          </p>
+        </div>
+
+        <div class="showcase-wrapper">
+          <!-- State Switcher Tabs -->
+          <div class="showcase-tabs">
+            <button class="showcase-tab-btn active" data-preview="1">
+              <span>1. Selección y Arrastre</span>
+            </button>
+            <button class="showcase-tab-btn" data-preview="2">
+              <span>2. Procesamiento y Barra de Carga</span>
+            </button>
+            <button class="showcase-tab-btn" data-preview="3">
+              <span>3. Previsualizador y Exportación</span>
+            </button>
+          </div>
+
+          <!-- Display -->
+          <div class="showcase-display">
+            <img src="./assets/images/app-preview-1.svg" alt="Captura real de ConvertMD" class="showcase-img" id="showcase-main-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supported Formats Matrix -->
+    <section class="section" id="formatos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Compatibilidad Universal</span>
+          <h2 class="section-title">Matriz de Formatos Soportados</h2>
+          <p class="section-subtitle">
+            Cualquier documento de oficina, base de datos o archivo multimedia se unifica bajo el estándar Markdown.
+          </p>
+        </div>
+
+        <div class="formats-grid">
+          <div class="format-category-card">
+            <div class="format-card-header">
+              <span class="format-card-icon">💼</span>
+              <h3 class="format-card-title">Documentos Office</h3>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-md);">
+              Preserva tablas, formatos en negrita, jerarquías de títulos y listas ordenadas.
+            </p>
+            <div class="format-tags">
+              <span class="format-tag">.docx</span>
+              <span class="format-tag">.doc</span>
+              <span class="format-tag">.xlsx</span>
+              <span class="format-tag">.xls</span>
+              <span class="format-tag">.pptx</span>
+              <span class="format-tag">.ppt</span>
+            </div>
+          </div>
+
+          <div class="format-category-card">
+            <div class="format-card-header">
+              <span class="format-card-icon">📖</span>
+              <h3 class="format-card-title">Lectura y Textos</h3>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-md);">
+              Extracción limpia de texto, encabezados y capítulos sin saltos de línea rotos.
+            </p>
+            <div class="format-tags">
+              <span class="format-tag">.pdf</span>
+              <span class="format-tag">.txt</span>
+              <span class="format-tag">.md</span>
+              <span class="format-tag">.epub</span>
+            </div>
+          </div>
+
+          <div class="format-category-card">
+            <div class="format-card-header">
+              <span class="format-card-icon">🗄️</span>
+              <h3 class="format-card-title">Datos Estructurados</h3>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-md);">
+              Transformación a tablas legibles para LLMs o bloques de código semánticos.
+            </p>
+            <div class="format-tags">
+              <span class="format-tag">.csv</span>
+              <span class="format-tag">.json</span>
+              <span class="format-tag">.xml</span>
+              <span class="format-tag">.html</span>
+              <span class="format-tag">.htm</span>
+            </div>
+          </div>
+
+          <div class="format-category-card">
+            <div class="format-card-header">
+              <span class="format-card-icon">📓</span>
+              <h3 class="format-card-title">Cuadernos y Archivos</h3>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-md);">
+              Extracción de celdas de Jupyter Notebooks y descomprobación de archivos comprimidos.
+            </p>
+            <div class="format-tags">
+              <span class="format-tag">.ipynb</span>
+              <span class="format-tag">.zip</span>
+            </div>
+          </div>
+
+          <div class="format-category-card">
+            <div class="format-card-header">
+              <span class="format-card-icon">👁️</span>
+              <h3 class="format-card-title">Multimedia y OCR</h3>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: var(--space-md);">
+              OCR integrado de Windows para fotos/capturas y extracción de metadatos de audio.
+            </p>
+            <div class="format-tags">
+              <span class="format-tag">.png (OCR)</span>
+              <span class="format-tag">.jpg (OCR)</span>
+              <span class="format-tag">.mp3</span>
+              <span class="format-tag">.wav</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Releases & Download Hub -->
+    <section class="section" id="releases">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Descargas y Releases</span>
+          <h2 class="section-title">Elige tu Formato de Entrega</h2>
+          <p class="section-subtitle">
+            Binarios compilados y optimizados para Windows x64. Elige entre la versión portable sin instalación o el instalador tradicional.
+          </p>
+        </div>
+
+        <div class="releases-grid">
+          <!-- Portable Card -->
+          <div class="release-card featured">
+            <span class="release-top-badge">Recomendado</span>
+            <div>
+              <div class="release-header">
+                <div class="release-type">Ejecutable Independiente</div>
+                <h3 class="release-title">ConvertMD Portable</h3>
+              </div>
+              <p class="release-desc">
+                No requiere instalación ni permisos de administrador. Cópialo a un pendrive USB o ejecútalo directamente con un doble clic.
+              </p>
+              <div class="release-specs">
+                <div class="release-spec-row">
+                  <span>Archivo:</span>
+                  <span>ConvertMD.exe</span>
+                </div>
+                <div class="release-spec-row">
+                  <span>Tamaño:</span>
+                  <span>~176 MB</span>
+                </div>
+                <div class="release-spec-row">
+                  <span>Plataforma:</span>
+                  <span>Windows 10 / 11 (x64)</span>
+                </div>
+                <div class="release-spec-row">
+                  <span>Dependencias:</span>
+                  <span style="color: var(--accent-success);">Ninguna (Autocontenido)</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://github.com/davidcaroo/convertMD/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-emerald btn-lg" style="width: 100%;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              <span>Descargar ConvertMD.exe</span>
+            </a>
+          </div>
+
+          <!-- Installer Card -->
+          <div class="release-card">
+            <div>
+              <div class="release-header">
+                <div class="release-type">Instalador Estándar</div>
+                <h3 class="release-title">ConvertMD Setup</h3>
+              </div>
+              <p class="release-desc">
+                Asistente de instalación estándar para Windows con creación de accesos directos en el Menú Inicio, Escritorio y desinstalador limpio.
+              </p>
+              <div class="release-specs">
+                <div class="release-spec-row">
+                  <span>Archivo:</span>
+                  <span>ConvertMD_Setup.exe</span>
+                </div>
+                <div class="release-spec-row">
+                  <span>Tamaño:</span>
+                  <span>~175 MB</span>
+                </div>
+                <div class="release-spec-row">
+                  <span>Plataforma:</span>
+                  <span>Windows 10 / 11 (x64)</span>
+                </div>
+                <div class="release-spec-row">
+                  <span>Motor Instalador:</span>
+                  <span>Inno Setup 6</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://github.com/davidcaroo/convertMD/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" style="width: 100%;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+              <span>Descargar Setup.exe</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-xl);">
+          <a href="https://github.com/davidcaroo/convertMD/releases" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); font-size: 0.95rem; text-decoration: none; font-weight: 600;">
+            Ver historial de versiones y notas de la versión en GitHub ➔
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Developer & Open Source Section -->
+    <section class="section" id="desarrollo" style="background: rgba(15, 23, 42, 0.4);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Para Desarrolladores</span>
+          <h2 class="section-title">Código Abierto y Ejecución Local</h2>
+          <p class="section-subtitle">
+            ConvertMD es 100% Open Source. Puedes auditar el código, clonarlo, personalizarlo o compilar tus propios ejecutables.
+          </p>
+        </div>
+
+        <div class="terminal-block">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+            </div>
+            <span class="terminal-title">powershell / bash</span>
+            <button class="btn btn-secondary btn-sm" id="btn-copy-terminal" style="padding: 4px 10px; font-size: 0.78rem;">
+              Copiar Comandos
+            </button>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span>git clone https://github.com/davidcaroo/convertMD.git</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span>cd convertMD</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-comment"># Instalar dependencias oficiales de Microsoft MarkItDown y CustomTkinter</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span>pip install -r requirements.txt</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-comment"># Iniciar la aplicación nativa</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span>python main.py</span>
+            </div>
+            <div class="terminal-line" style="margin-top: 10px;">
+              <span class="terminal-comment"># Para recompilar el portable y el instalador:</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span style="color: var(--accent-cyan);">python build_release.py</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <img src="./assets/images/app_icon.png" alt="ConvertMD Logo" class="brand-icon">
+            <span class="brand-name">ConvertMD</span>
+          </div>
+          <p>
+            Conversor universal y privado de documentos a Markdown para la nueva generación de Inteligencia Artificial y agentes autónomos.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#experiencia-3d">Experiencia 3D</a></li>
+            <li><a href="#demo">Demo Interactiva</a></li>
+            <li><a href="#capturas">Capturas de la App</a></li>
+            <li><a href="#formatos">Formatos Soportados</a></li>
+            <li><a href="#releases">Releases y Descargas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Comunidad &amp; Código</h4>
+          <ul>
+            <li><a href="https://github.com/davidcaroo/convertMD" target="_blank" rel="noopener noreferrer">Repositorio en GitHub</a></li>
+            <li><a href="https://github.com/davidcaroo/convertMD/releases" target="_blank" rel="noopener noreferrer">Releases y Binarios</a></li>
+            <li><a href="https://github.com/microsoft/markitdown" target="_blank" rel="noopener noreferrer">Microsoft MarkItDown</a></li>
+            <li><a href="https://github.com/davidcaroo/convertMD/issues" target="_blank" rel="noopener noreferrer">Reportar un problema</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © <span id="footer-year">2026</span> <strong>ConvertMD</strong>. Creado por <a href="https://github.com/davidcaroo" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); text-decoration: none;">David Caro (@davidcaroo)</a>.
+        </div>
+        <div>
+          Licencia de código abierto <a href="https://github.com/davidcaroo/convertMD/blob/main/README.md" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: underline;">MIT License</a>.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/scene3d.js"></script>
+  <script src="./assets/js/live-demo.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

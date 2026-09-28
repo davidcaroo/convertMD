@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <linearGradient id="progressGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#89b4fa"/>
+      <stop offset="50%" stop-color="#a6e3a1"/>
+      <stop offset="100%" stop-color="#74c7ec"/>
+    </linearGradient>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#181825"/>
+    </linearGradient>
+  </defs>
+
+  <!-- App Window Shadow & Frame -->
+  <g filter="url(#shadow)">
+    <rect x="20" y="20" width="860" height="640" rx="16" fill="#11111b" stroke="#313244" stroke-width="1.5"/>
+    
+    <!-- Titlebar -->
+    <path d="M 20 36 A 16 16 0 0 1 36 20 L 864 20 A 16 16 0 0 1 880 36 L 880 58 L 20 58 Z" fill="#181825"/>
+    <circle cx="44" cy="39" r="6" fill="#f38ba8"/>
+    <circle cx="64" cy="39" r="6" fill="#f9e2af"/>
+    <circle cx="84" cy="39" r="6" fill="#a6e3a1"/>
+    <text x="450" y="44" fill="#a6adc8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">ConvertMD - Convirtiendo documento...</text>
+    
+    <!-- Window Inner Container -->
+    <rect x="40" y="78" width="820" height="562" rx="14" fill="#181825" stroke="#252538" stroke-width="1"/>
+
+    <!-- Header Section -->
+    <g transform="translate(64, 102)">
+      <text x="0" y="32" fill="#cdd6f4" font-family="'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" letter-spacing="-0.5">ConvertMD</text>
+      <rect x="175" y="10" width="220" height="26" rx="6" fill="#313244"/>
+      <text x="187" y="27" fill="#89b4fa" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600">⚡ Powered by Microsoft MarkItDown</text>
+      <text x="0" y="58" fill="#a6adc8" font-family="'Segoe UI', Roboto, sans-serif" font-size="13">Convirtiendo con procesamiento en segundo plano asíncrono para máxima fluidez.</text>
+    </g>
+
+    <!-- Selected File Info Card -->
+    <g transform="translate(64, 185)">
+      <rect x="0" y="0" width="772" height="88" rx="12" fill="#1e1e2e" stroke="#313244" stroke-width="1.5"/>
+      <rect x="20" y="18" width="52" height="52" rx="10" fill="#2a2b3d"/>
+      <!-- File Document Icon -->
+      <path d="M 38 28 L 50 28 L 58 36 L 58 58 L 38 58 Z" fill="#89b4fa" opacity="0.2"/>
+      <path d="M 38 28 L 50 28 L 58 36 L 58 58 L 38 58 Z" stroke="#89b4fa" stroke-width="2" fill="none" stroke-linejoin="round"/>
+      <path d="M 50 28 L 50 36 L 58 36" stroke="#89b4fa" stroke-width="1.8" fill="none"/>
+      
+      <text x="90" y="42" fill="#cdd6f4" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600">Reporte_Financiero_Consolidado_Q3.xlsx</text>
+      <text x="90" y="63" fill="#a6adc8" font-family="'JetBrains Mono', monospace" font-size="12">Tamaño: 4.82 MB • Tipo: Microsoft Excel Spreadsheet (.xlsx)</text>
+
+      <rect x="635" y="28" width="115" height="32" rx="8" fill="#313244"/>
+      <text x="692" y="49" fill="#a6e3a1" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle">En Proceso</text>
+    </g>
+
+    <!-- Animated Conversion Progress Panel -->
+    <g transform="translate(64, 295)">
+      <rect x="0" y="0" width="772" height="180" rx="14" fill="url(#cardBg)" stroke="#89b4fa" stroke-width="1.5" stroke-opacity="0.4"/>
+      
+      <!-- Spinner / Gear Icon -->
+      <g transform="translate(386, 45)">
+        <circle cx="0" cy="0" r="22" stroke="#313244" stroke-width="4" fill="none"/>
+        <path d="M 0 -22 A 22 22 0 0 1 22 0" stroke="#89b4fa" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <text x="386" y="95" fill="#cdd6f4" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" text-anchor="middle">Extrayendo hojas, matrices tabulares y fórmulas...</text>
+      
+      <!-- Real-time Progress Bar -->
+      <rect x="40" y="115" width="692" height="12" rx="6" fill="#313244"/>
+      <rect x="40" y="115" width="480" height="12" rx="6" fill="url(#progressGrad)"/>
+
+      <text x="40" y="145" fill="#a6adc8" font-family="'JetBrains Mono', monospace" font-size="12">Transformando tabla 'Ventas_Regionales' a Markdown Grid...</text>
+      <text x="732" y="145" fill="#89b4fa" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="end">70%</text>
+    </g>
+
+    <!-- Real-time Terminal Log Stream -->
+    <g transform="translate(64, 495)">
+      <rect x="0" y="0" width="772" height="108" rx="10" fill="#11111b" stroke="#313244"/>
+      <text x="20" y="26" fill="#6c7086" font-family="'JetBrains Mono', monospace" font-size="11">[0.02s] Analizando formato binario OOXML con MarkItDown Engine</text>
+      <text x="20" y="46" fill="#89b4fa" font-family="'JetBrains Mono', monospace" font-size="11">[0.15s] Encontradas 4 hojas de cálculo: Resumen, Ventas, Costes, Proyecciones</text>
+      <text x="20" y="66" fill="#a6e3a1" font-family="'JetBrains Mono', monospace" font-size="11">[0.31s] Generando encabezados de columna GFM (GitHub Flavored Markdown)</text>
+      <text x="20" y="86" fill="#fab387" font-family="'JetBrains Mono', monospace" font-size="11">[0.42s] Hilo en segundo plano activo: Interfaz gráfica 100% responsiva</text>
+    </g>
+  </g>
+</svg>
