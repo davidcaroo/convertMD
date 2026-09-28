@@ -9,6 +9,15 @@
   --bg-elevated: #24273a;
   --bg-terminal: #090d16;
 
+  /* Demo Pane Backgrounds */
+  --bg-pane-input: #090d16;
+  --bg-pane-output: #0d121f;
+  --bg-pane-header: rgba(15, 23, 42, 0.7);
+  --text-pane: #cdd6f4;
+  --text-pane-header: #94a3b8;
+  --text-markdown-table: #a6e3a1;
+  --text-markdown-heading: #89b4fa;
+
   /* Borders & Dividers */
   --border-subtle: #242938;
   --border-card: #313244;
@@ -70,32 +79,45 @@
   --navbar-bg: rgba(11, 15, 23, 0.85);
   --ambient-glow-1: rgba(137, 180, 250, 0.12);
   --ambient-glow-2: rgba(34, 197, 94, 0.08);
+
+  /* 3D Viewport Frame */
+  --viewport-3d-bg: radial-gradient(circle at center, #111827 0%, #030712 90%);
+  --viewport-3d-border: #1f2937;
 }
 
-/* Light Theme Overrides */
+/* Light Theme Overrides - High Contrast, Deep Dark Text, Crisp Surfaces */
 [data-theme="light"] {
   --bg-main: #f8fafc;
   --bg-surface: #ffffff;
   --bg-card: #ffffff;
   --bg-card-hover: #f1f5f9;
   --bg-elevated: #e2e8f0;
-  --bg-terminal: #0f172a; /* Code terminal remains dark for clarity */
+  --bg-terminal: #0f172a;
+
+  /* Demo Panes in Light Mode - Crisp Light Editor Look */
+  --bg-pane-input: #ffffff;
+  --bg-pane-output: #f8fafc;
+  --bg-pane-header: #f1f5f9;
+  --text-pane: #0f172a;               /* High contrast deep black/slate */
+  --text-pane-header: #334155;        /* Clear dark slate for headers */
+  --text-markdown-table: #15803d;     /* Deep readable emerald on light bg */
+  --text-markdown-heading: #1d4ed8;   /* Deep sapphire blue for headings */
 
   --border-subtle: #e2e8f0;
   --border-card: #cbd5e1;
   --border-focus: #2563eb;
   --border-glow: rgba(37, 99, 235, 0.25);
 
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
-  --text-dim: #94a3b8;
+  --text-primary: #0f172a;            /* Deep black/slate */
+  --text-secondary: #1e293b;          /* Dark slate - NEVER washed out */
+  --text-muted: #475569;              /* High contrast slate */
+  --text-dim: #64748b;
   --text-inverse: #ffffff;
 
-  --accent-primary: #2563eb;       /* Rich Blue */
+  --accent-primary: #2563eb;          /* Rich Cobalt Blue */
   --accent-primary-hover: #1d4ed8;
   --accent-glow: rgba(37, 99, 235, 0.25);
-  --accent-success: #16a34a;       /* Forest Emerald */
+  --accent-success: #16a34a;          /* Rich Forest Emerald */
   --accent-success-hover: #15803d;
   --accent-warning: #d97706;
   --accent-purple: #7c3aed;
@@ -107,7 +129,11 @@
   --shadow-glow: 0 0 35px rgba(37, 99, 235, 0.15);
   --shadow-success-glow: 0 0 30px rgba(22, 163, 74, 0.15);
 
-  --navbar-bg: rgba(255, 255, 255, 0.88);
+  --navbar-bg: rgba(255, 255, 255, 0.92);
   --ambient-glow-1: rgba(37, 99, 235, 0.06);
   --ambient-glow-2: rgba(22, 163, 74, 0.05);
+
+  /* 3D Viewport in Light Mode: Sleek dark glass showcase frame */
+  --viewport-3d-bg: radial-gradient(circle at center, #0f172a 0%, #020617 95%);
+  --viewport-3d-border: #cbd5e1;
 }
