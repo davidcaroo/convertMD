@@ -192,24 +192,11 @@ body::after {
   display: block;
 }
 
-@media (max-width: 480px) {
-  .brand-icon {
-    width: 30px;
-    height: 30px;
-  }
-}
-
 .brand-name {
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text-primary);
-}
-
-@media (max-width: 480px) {
-  .brand-name {
-    font-size: 1.15rem;
-  }
 }
 
 .nav-links {
@@ -250,29 +237,107 @@ body::after {
   }
 }
 
-/* Responsive Navbar Actions: keep mobile clean & uncrowded */
+/* Responsive Navbar: On mobile/tablet, hide text 'ConvertMD' to give full space to logo, theme controls, GitHub icon, and Download button */
 @media (max-width: 768px) {
-  .nav-btn-github span {
+  .brand-name {
     display: none;
   }
-  .nav-btn-github {
-    padding: 8px 10px;
-  }
-}
 
-@media (max-width: 480px) {
-  .nav-btn-github {
-    display: none;
+  .brand {
+    gap: 0;
+    flex-shrink: 0;
   }
+
+  .brand-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-container {
+    padding: 0 var(--space-sm);
+    gap: var(--space-xs);
+  }
+
+  .nav-actions {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .theme-switch-group {
+    padding: 2px;
+    gap: 2px;
+  }
+
+  .theme-toggle-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .theme-toggle-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .nav-btn-github {
+    display: inline-flex !important;
+    padding: 6px 8px;
+    min-width: 34px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-btn-github span {
+    display: none !important;
+  }
+
+  .nav-btn-github svg {
+    width: 18px;
+    height: 18px;
+  }
+
   .nav-btn-download {
-    padding: 7px 12px;
-    font-size: 0.82rem;
+    padding: 7px 14px;
+    font-size: 0.84rem;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 }
 
 @media (max-width: 360px) {
-  .brand-name {
-    display: none;
+  .nav-container {
+    padding: 0 6px;
+    gap: 4px;
+  }
+
+  .nav-actions {
+    gap: 4px;
+  }
+
+  .brand-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .theme-toggle-btn {
+    width: 24px;
+    height: 24px;
+  }
+
+  .theme-toggle-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .nav-btn-github {
+    padding: 4px 6px;
+    min-width: 30px;
+    height: 30px;
+  }
+
+  .nav-btn-download {
+    padding: 6px 10px;
+    font-size: 0.78rem;
   }
 }
 
