@@ -9,6 +9,9 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
@@ -20,6 +23,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   position: relative;
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
@@ -50,6 +55,19 @@ body::after {
   background: radial-gradient(circle, var(--ambient-glow-2) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
+}
+
+@media (max-width: 640px) {
+  body::before {
+    width: 360px;
+    height: 300px;
+    top: -80px;
+  }
+  body::after {
+    width: 280px;
+    height: 280px;
+    right: 0;
+  }
 }
 
 /* Container */
@@ -223,11 +241,38 @@ body::after {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
+  flex-shrink: 0;
 }
 
 @media (min-width: 640px) {
   .nav-actions {
     gap: var(--space-sm);
+  }
+}
+
+/* Responsive Navbar Actions: keep mobile clean & uncrowded */
+@media (max-width: 768px) {
+  .nav-btn-github span {
+    display: none;
+  }
+  .nav-btn-github {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-btn-github {
+    display: none;
+  }
+  .nav-btn-download {
+    padding: 7px 12px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-name {
+    display: none;
   }
 }
 

@@ -204,7 +204,14 @@
 
 @media (max-width: 640px) {
   .hero-3d-wrapper {
-    height: 340px;
+    height: 320px;
+    border-radius: var(--radius-lg);
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-3d-wrapper {
+    height: 270px;
   }
 }
 
@@ -213,6 +220,7 @@
   height: 100% !important;
   display: block;
   cursor: grab;
+  touch-action: pan-y; /* Permite desplazamiento vertical de la página al tocar el canvas en móviles */
 }
 
 #canvas-3d:active {
@@ -234,6 +242,15 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .canvas-hint {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+    bottom: 10px;
+    right: 12px;
+  }
 }
 
 /* ==========================================================================
@@ -937,6 +954,203 @@
 
 .terminal-comment {
   color: #64748b;
+}
+
+/* ==========================================================================
+   Comprehensive Responsive Adaptations (Mobile < 768px, < 480px, < 360px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Cards padding & spacing */
+  .value-card,
+  .pipeline-card,
+  .release-card {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .benefit-card {
+    padding: var(--space-lg);
+  }
+
+  /* Live Demo Playground */
+  .demo-toolbar {
+    padding: var(--space-sm) var(--space-md);
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+
+  .sample-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 4px;
+  }
+
+  .sample-tab-btn {
+    padding: 7px 6px;
+    font-size: 0.78rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .sample-tab-btn svg {
+    display: none;
+  }
+
+  .demo-metrics-bar {
+    justify-content: space-between;
+    font-size: 0.76rem;
+    width: 100%;
+    padding: 0 4px;
+  }
+
+  .pane-header {
+    padding: 10px var(--space-md);
+    font-size: 0.75rem;
+  }
+
+  .pane-content {
+    padding: var(--space-md);
+    font-size: 0.84rem;
+    min-height: 240px;
+    line-height: 1.6;
+  }
+
+  .demo-footer-action {
+    padding: var(--space-sm) var(--space-md);
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+
+  .demo-footer-action .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Showcase Tabs */
+  .showcase-wrapper {
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+  }
+
+  .showcase-tabs {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .showcase-tab-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero details */
+  .hero-meta {
+    gap: var(--space-sm);
+    font-size: 0.82rem;
+  }
+
+  .hero-badge {
+    font-size: 0.76rem;
+    padding: 5px 10px;
+  }
+
+  /* Cards on small screens */
+  .value-card,
+  .pipeline-card,
+  .benefit-card,
+  .release-card {
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+  }
+
+  .value-card-title,
+  .pipeline-title,
+  .release-title {
+    font-size: 1.15rem;
+  }
+
+  .value-card-desc,
+  .pipeline-desc,
+  .benefit-desc {
+    font-size: 0.88rem;
+  }
+
+  .release-specs {
+    font-size: 0.8rem;
+  }
+
+  .release-top-badge {
+    top: -10px;
+    right: 16px;
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  /* Format cards */
+  .format-category-card {
+    padding: var(--space-md);
+  }
+
+  .format-card-header {
+    gap: var(--space-xs);
+    margin-bottom: var(--space-sm);
+  }
+
+  .format-card-title {
+    font-size: 0.96rem;
+  }
+
+  .format-tags {
+    gap: 6px;
+  }
+
+  .format-tag {
+    font-size: 0.76rem;
+    padding: 3px 8px;
+  }
+
+  /* Terminal code block */
+  .terminal-header {
+    padding: 10px var(--space-sm);
+  }
+
+  .terminal-title {
+    font-size: 0.72rem;
+  }
+
+  .terminal-body {
+    padding: var(--space-md) var(--space-sm);
+    font-size: 0.78rem;
+    line-height: 1.6;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .terminal-line {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .sample-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .sample-tab-btn {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+
+  .hero-badge-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
 }
 
 /* ==========================================================================
