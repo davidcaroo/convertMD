@@ -1,4 +1,5 @@
-/* ConvertMD Layout Styles - Responsive Grid & Structure */
+/* ConvertMD Layout Styles - Responsive Grid & Minimalist Structure */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -67,18 +68,27 @@ body::after {
   }
 }
 
+@media (max-width: 640px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
 /* Sections - Generous vertical rhythm */
 .section {
   padding: var(--space-4xl) 0;
   position: relative;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+}
+
+@media (max-width: 480px) {
   .section {
     padding: var(--space-2xl) 0;
-  }
-  .container {
-    padding: 0 var(--space-md);
   }
 }
 
@@ -90,22 +100,22 @@ body::after {
 
 @media (max-width: 640px) {
   .section-header {
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-2xl);
   }
 }
 
 .section-title {
-  font-size: clamp(1.9rem, 4vw, 2.85rem);
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-primary);
-  margin-bottom: var(--space-md);
-  letter-spacing: -0.02em;
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.025em;
 }
 
 .section-subtitle {
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  color: var(--text-muted);
+  font-size: clamp(1.02rem, 2vw, 1.15rem);
+  color: var(--text-secondary);
   line-height: 1.65;
 }
 
@@ -160,7 +170,7 @@ body::after {
   width: 36px;
   height: 36px;
   border-radius: var(--radius-md);
-  box-shadow: 0 0 16px rgba(137, 180, 250, 0.35);
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.35);
   display: block;
 }
 
@@ -191,7 +201,7 @@ body::after {
   list-style: none;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .nav-links {
     display: flex;
   }
@@ -297,15 +307,16 @@ body::after {
 
 @media (min-width: 768px) {
   .footer-grid {
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1.6fr 1fr 1fr;
   }
 }
 
 .footer-brand p {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 0.95rem;
   margin-top: var(--space-sm);
-  max-width: 340px;
+  max-width: 360px;
+  line-height: 1.6;
 }
 
 .footer-col h4 {
@@ -325,7 +336,7 @@ body::after {
 .footer-col a {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 500;
   transition: color var(--transition-fast);
 }
@@ -342,7 +353,7 @@ body::after {
   gap: var(--space-sm);
   align-items: center;
   justify-content: space-between;
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-size: 0.88rem;
   text-align: center;
 }

@@ -1,45 +1,47 @@
-/* ConvertMD Design System Tokens - ui-ux-pro-max & impeccable compliant */
+/* ConvertMD Design System Tokens - Linear / Raycast Minimalist Tech (ui-ux-pro-max & impeccable compliant) */
 
 :root {
-  /* Default: Dark Mode (OLED) */
-  --bg-main: #0b0f17;
-  --bg-surface: #0f172a;
-  --bg-card: #181825;
-  --bg-card-hover: #1e1e2e;
-  --bg-elevated: #24273a;
-  --bg-terminal: #090d16;
+  /* ==========================================================================
+     Dark Theme (Default) - Obsidian & Deep Slate
+     ========================================================================== */
+  --bg-main: #07090e;
+  --bg-surface: #0b0f19;
+  --bg-card: #111726;
+  --bg-card-hover: #161e31;
+  --bg-elevated: #1a2238;
+  --bg-terminal: #070a12;
 
-  /* Demo Pane Backgrounds */
-  --bg-pane-input: #090d16;
-  --bg-pane-output: #0d121f;
-  --bg-pane-header: rgba(15, 23, 42, 0.7);
-  --text-pane: #cdd6f4;
+  /* Demo Editor Panes (Dark) */
+  --bg-pane-input: #080c16;
+  --bg-pane-output: #0a0f1c;
+  --bg-pane-header: #0f1626;
+  --text-pane: #e2e8f0;
   --text-pane-header: #94a3b8;
-  --text-markdown-table: #a6e3a1;
-  --text-markdown-heading: #89b4fa;
+  --text-markdown-table: #34d399;
+  --text-markdown-heading: #60a5fa;
 
   /* Borders & Dividers */
-  --border-subtle: #242938;
-  --border-card: #313244;
-  --border-focus: #89b4fa;
-  --border-glow: rgba(137, 180, 250, 0.35);
+  --border-subtle: #1e293b;
+  --border-card: #27354f;
+  --border-focus: #3b82f6;
+  --border-glow: rgba(59, 130, 246, 0.35);
 
-  /* Typography Colors */
+  /* Typography Colors - High Contrast */
   --text-primary: #f8fafc;
-  --text-secondary: #cdd6f4;
-  --text-muted: #94a3b8;
+  --text-secondary: #cbd5e1;
+  --text-muted: #8e9db3;
   --text-dim: #64748b;
-  --text-inverse: #0b0f17;
+  --text-inverse: #07090e;
 
-  /* Brand Accents */
-  --accent-primary: #89b4fa;       /* Electric Tech Blue */
-  --accent-primary-hover: #b4befe;
-  --accent-glow: rgba(137, 180, 250, 0.4);
-  --accent-success: #22c55e;       /* Terminal Emerald */
-  --accent-success-hover: #4ade80;
+  /* Accents */
+  --accent-primary: #3b82f6;       /* Electric Tech Blue */
+  --accent-primary-hover: #60a5fa;
+  --accent-glow: rgba(59, 130, 246, 0.35);
+  --accent-success: #10b981;       /* Emerald Terminal */
+  --accent-success-hover: #34d399;
   --accent-warning: #f59e0b;       /* Amber */
-  --accent-purple: #cba6f7;        /* Mauve / LLM Intelligence */
-  --accent-cyan: #38bdf8;
+  --accent-purple: #8b5cf6;        /* Violet / Intelligence */
+  --accent-cyan: #06b6d4;
 
   /* Fonts */
   --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -69,71 +71,78 @@
   --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.65);
-  --shadow-glow: 0 0 35px rgba(137, 180, 250, 0.2);
-  --shadow-success-glow: 0 0 30px rgba(34, 197, 94, 0.25);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 35px rgba(59, 130, 246, 0.25);
+  --shadow-success-glow: 0 0 30px rgba(16, 185, 129, 0.25);
 
   /* Navbar background */
-  --navbar-bg: rgba(11, 15, 23, 0.85);
-  --ambient-glow-1: rgba(137, 180, 250, 0.12);
-  --ambient-glow-2: rgba(34, 197, 94, 0.08);
+  --navbar-bg: rgba(7, 9, 14, 0.88);
+  --ambient-glow-1: rgba(59, 130, 246, 0.1);
+  --ambient-glow-2: rgba(16, 185, 129, 0.08);
 
-  /* 3D Viewport Frame */
+  /* 3D Viewport Console Frame */
   --viewport-3d-bg: radial-gradient(circle at center, #111827 0%, #030712 90%);
   --viewport-3d-border: #1f2937;
 }
 
-/* Light Theme Overrides - High Contrast, Deep Dark Text, Crisp Surfaces */
+/* ==========================================================================
+   Light Theme - Clean Precision, Absolute Contrast (No Washed Out Grays)
+   ========================================================================== */
 [data-theme="light"] {
   --bg-main: #f8fafc;
   --bg-surface: #ffffff;
   --bg-card: #ffffff;
   --bg-card-hover: #f1f5f9;
   --bg-elevated: #e2e8f0;
-  --bg-terminal: #0f172a;
+  --bg-terminal: #0b0f19;
 
-  /* Demo Panes in Light Mode - Crisp Light Editor Look */
+  /* Demo Editor Panes in Light Mode - Crisp Light Editor (Linear / VS Code Light) */
   --bg-pane-input: #ffffff;
   --bg-pane-output: #f8fafc;
   --bg-pane-header: #f1f5f9;
-  --text-pane: #0f172a;               /* High contrast deep black/slate */
-  --text-pane-header: #334155;        /* Clear dark slate for headers */
-  --text-markdown-table: #15803d;     /* Deep readable emerald on light bg */
-  --text-markdown-heading: #1d4ed8;   /* Deep sapphire blue for headings */
+  --text-pane: #090d16;               /* Absolute deep black slate (15:1 contrast) */
+  --text-pane-header: #1e293b;        /* Crisp dark slate */
+  --text-markdown-table: #047857;     /* High contrast deep emerald */
+  --text-markdown-heading: #1d4ed8;   /* High contrast sapphire blue */
 
+  /* Borders & Dividers */
   --border-subtle: #e2e8f0;
   --border-card: #cbd5e1;
   --border-focus: #2563eb;
   --border-glow: rgba(37, 99, 235, 0.25);
 
-  --text-primary: #0f172a;            /* Deep black/slate */
-  --text-secondary: #1e293b;          /* Dark slate - NEVER washed out */
-  --text-muted: #475569;              /* High contrast slate */
+  /* Typography Colors - Pitch Black & Deep Slate */
+  --text-primary: #090d16;            /* Primary bold text */
+  --text-secondary: #1e293b;          /* Body & subtitles - NEVER washed out */
+  --text-muted: #334155;              /* Supporting copy - clear and sharp */
   --text-dim: #64748b;
   --text-inverse: #ffffff;
 
-  --accent-primary: #2563eb;          /* Rich Cobalt Blue */
+  /* Accents */
+  --accent-primary: #2563eb;          /* Rich Cobalt */
   --accent-primary-hover: #1d4ed8;
-  --accent-glow: rgba(37, 99, 235, 0.25);
-  --accent-success: #16a34a;          /* Rich Forest Emerald */
-  --accent-success-hover: #15803d;
+  --accent-glow: rgba(37, 99, 235, 0.2);
+  --accent-success: #059669;          /* Deep Forest Emerald */
+  --accent-success-hover: #047857;
   --accent-warning: #d97706;
   --accent-purple: #7c3aed;
   --accent-cyan: #0284c7;
 
-  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
   --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 16px 48px rgba(15, 23, 42, 0.12);
-  --shadow-glow: 0 0 35px rgba(37, 99, 235, 0.15);
-  --shadow-success-glow: 0 0 30px rgba(22, 163, 74, 0.15);
+  --shadow-glow: 0 0 35px rgba(37, 99, 235, 0.12);
+  --shadow-success-glow: 0 0 30px rgba(5, 150, 105, 0.12);
 
-  --navbar-bg: rgba(255, 255, 255, 0.92);
-  --ambient-glow-1: rgba(37, 99, 235, 0.06);
-  --ambient-glow-2: rgba(22, 163, 74, 0.05);
+  /* Navbar background */
+  --navbar-bg: rgba(255, 255, 255, 0.94);
+  --ambient-glow-1: rgba(37, 99, 235, 0.05);
+  --ambient-glow-2: rgba(16, 185, 129, 0.04);
 
-  /* 3D Viewport in Light Mode: Sleek dark glass showcase frame */
+  /* 3D Viewport Console Frame in Light Mode - Sleek Dark Stage that makes 3D pop */
   --viewport-3d-bg: radial-gradient(circle at center, #0f172a 0%, #020617 95%);
   --viewport-3d-border: #cbd5e1;
 }
